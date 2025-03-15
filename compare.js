@@ -19,5 +19,6 @@ const compareObjects = (obj1, obj2) => {
 
   return `{\n${result.join('\n')}\n}`;
 };
-
 export default compareObjects;
+
+

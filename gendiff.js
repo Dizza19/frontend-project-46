@@ -27,4 +27,4 @@ program
     console.log(diff);
   });
 
-program.parse(process.argv);
+export default compare;
