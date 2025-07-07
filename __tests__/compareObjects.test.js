@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import gendiff from '../gendiff.js';
+import { genDiffData } from '../gendiff.js';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -20,7 +20,7 @@ const keys2 = Object.keys(read2);
 const normalize = (str) => str.split('\n').map((line) => line.trim()).join('\n');
 
 test('Вывод разницы между файлами', () => { 
-const result = gendiff(read1 , read2);
+const result = genDiffData(read1 , read2);
 const expected = `{
   - follow: false
     host: hexlet.io
