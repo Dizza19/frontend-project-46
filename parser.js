@@ -1,18 +1,26 @@
 import fs from 'fs';
 import path from 'path';
+import yaml from 'js-yaml';
+
+const parse = (filepath) => {
+  const fullPath = path.resolve(process.cwd(), filepath);
+  const ext = path.extname(fullPath);
+  const raw = fs.readFileSync(fullPath, 'utf-8');
+
+  if (ext === '.json') {
+    return JSON.parse(raw);
+  }
+
+  if (ext === '.yaml' || ext === '.yml') {
+    return yaml.load(raw); 
+  }
+
+  throw new Error(`Неизвестный формат файла: ${ext}`);
+};
 
 const parseFile = (filepath1, filepath2) => {
-  const path1 = path.resolve(process.cwd(), filepath1);
-  const path2 = path.resolve(process.cwd(), filepath2);
-
-  console.log('Пути к файлам:', path1, path2);
-
-  const read1 = fs.readFileSync(path1, { encoding: 'utf-8' });
-  const read2 = fs.readFileSync(path2, { encoding: 'utf-8' });
-
-  const data1 = JSON.parse(read1);
-  const data2 = JSON.parse(read2);
-
+  const data1 = parse(filepath1);
+  const data2 = parse(filepath2);
   return { data1, data2 };
 };
 

@@ -1,10 +1,26 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Dizza19/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Dizza19/frontend-project-46/actions)
-
 [![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=Dizza19_frontend-project-46&metric=coverage)](https://sonarcloud.io/dashboard?id=Dizza19_frontend-project-46)
 
-[Ссылка на аскинему] (https://asciinema.org/a/obSw7azMUwlSMyJP4jcigTBmR)
+---
 
-### Пример использования (asciinema):
+### 📦 Описание
 
-[![asciinema demo](https://asciinema.org/a/TASwxa34XKuUbXERPDYNNu7JZ.svg)](https://asciinema.org/a/TASwxa34XKuUbXERPDYNNu7JZ)
+**gendiff** — утилита для поиска различий между двумя конфигурационными файлами (JSON/YAML) с поддержкой вложенности.
+
+---
+
+### 🎥 Пример использования (asciinema):
+
+#### Простое сравнение:
+
+[![asciicast](https://asciinema.org/a/V4NMx3rrLnlnAaaU2ZS9aqoHw.svg)](https://asciinema.org/a/V4NMx3rrLnlnAaaU2ZS9aqoHw)
+
+---
+
+### 🚀 Установка
+
+```bash
+git clone https://github.com/Dizza19/frontend-project-46.git
+cd frontend-project-46
+make install
