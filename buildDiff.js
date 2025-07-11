@@ -1,10 +1,10 @@
 const buildDiff = (obj1, obj2) => {
   const keys = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])];
   const diff = keys.map((key) => {
-    if (!obj2.hasOwnProperty(key)) {
+    if (!obj2.prototype.hasOwnProperty.call(key)) {
       return { key, type: 'removed', value: obj1[key] };
     }
-    if (!obj1.hasOwnProperty(key)) {
+    if (!obj1.prototype.hasOwnProperty.call(key)) {
       return { key, type: 'added', value: obj2[key] };
     }
     if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object' && obj1[key] !== null && obj2[key] !== null) {
