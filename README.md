@@ -13,8 +13,10 @@
 ### 🎥 Пример использования (asciinema):
 
 #### Простое сравнение:
-
 [![asciicast](https://asciinema.org/a/V4NMx3rrLnlnAaaU2ZS9aqoHw.svg)](https://asciinema.org/a/V4NMx3rrLnlnAaaU2ZS9aqoHw)
+
+#### Формат stylish:
+[![asciicast](https://asciinema.org/a/V5gpoRy3FixXx1OxWkyd28AFi.svg)](https://asciinema.org/a/V5gpoRy3FixXx1OxWkyd28AFi)
 
 ---
 

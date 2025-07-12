@@ -1,0 +1,7 @@
+organization=dizza19
+projectKey=Dizza19_frontend-project-46
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.65276
+dashboardUrl=https://sonarcloud.io/dashboard?id=Dizza19_frontend-project-46
+ceTaskId=AZflL8rIBR7ZEGH9vxmg
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZflL8rIBR7ZEGH9vxmg
