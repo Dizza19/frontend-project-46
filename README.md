@@ -18,6 +18,8 @@
 #### Формат stylish:
 [![asciicast](https://asciinema.org/a/V5gpoRy3FixXx1OxWkyd28AFi.svg)](https://asciinema.org/a/V5gpoRy3FixXx1OxWkyd28AFi)
 
+#### Формат json:
+[![asciicast](https://asciinema.org/a/inXZy37580cwYIJlpxDZuKlIs.svg)](https://asciinema.org/a/inXZy37580cwYIJlpxDZuKlIs)
 ---
 
 ### 🚀 Установка
