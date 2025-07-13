@@ -15,7 +15,7 @@ const formatPlain = (tree, path = '') =>
           return `Property '${fullPath}' was added with value: ${convert(node.value)}`;
         case 'removed':
           return `Property '${fullPath}' was removed`;
-        case 'updated':
+        case 'modified':
           return `Property '${fullPath}' was updated. From ${convert(node.oldValue)} to ${convert(node.newValue)}`;
         case 'nested':
           return formatPlain(node.children, fullPath);
