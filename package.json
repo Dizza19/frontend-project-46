@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
-    "lint": "eslint . --ext .js",
+    "lint": "eslint . --ext .js --config .eslintrc.cjs",
     "lint-fix": "eslint . --ext .js --fix"
   },
   "author": "",
