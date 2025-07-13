@@ -16,5 +16,7 @@ test('gendiff plain format', () => {
   const expected = readFile('expected_plain.txt');
 
   const result = genDiff(file1, file2, 'plain');
+ console.log('ACTUAL:\n', result);             // ← потом выводим
+  console.log('EXPECTED:\n', expected);
   expect(result.trim()).toBe(expected.trim());
 });
