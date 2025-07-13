@@ -9,7 +9,6 @@ export default defineConfig([
   },
   stylistic.configs.recommended,
   {
-    files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
