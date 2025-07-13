@@ -4,11 +4,10 @@ import { defineConfig } from 'eslint/config'
 import stylistic from '@stylistic/eslint-plugin'
 
 export default defineConfig([
-  // Стили оформления кода
   stylistic.configs.recommended,
-  // Основные правила JavaScript + Node
   {
     files: ['**/*.{js,mjs,cjs}'],
+    ignores: ['coverage/**'], // ← сюда!
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -20,8 +19,5 @@ export default defineConfig([
       js,
     },
     extends: ['js/recommended'],
-  },
-  {
-    ignores: ['coverage/**'],
   },
 ])
