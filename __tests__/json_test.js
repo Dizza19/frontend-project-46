@@ -2,13 +2,23 @@ import { test, expect } from '@jest/globals';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
-import genDiff from '../gendiff.js';
+import genDiff from '../gendiff';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
-const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
+const getFixturePath = (name) => path.join(dirname, '..', '__fixtures__', name);
+const readFile = (name) => fs.readFileSync(getFixturePath(name), 'utf-8');
+
+const sortDiffTreeObject = (obj) => Object.keys(obj)
+  .sort()
+  .reduce((acc, key) => {
+    const value = obj[key];
+    acc[key] = typeof value === 'object' && value !== null && !Array.isArray(value)
+      ? sortDiffTreeObject(value)
+      : value;
+    return acc;
+  }, {});
 
 const sortDiffTree = (nodes) => nodes
   .map((node) => {
@@ -21,16 +31,6 @@ const sortDiffTree = (nodes) => nodes
     return node;
   })
   .sort((a, b) => a.key.localeCompare(b.key));
-
-const sortDiffTreeObject = (obj) => Object.keys(obj)
-  .sort()
-  .reduce((acc, key) => {
-    const value = obj[key];
-    acc[key] = typeof value === 'object' && value !== null && !Array.isArray(value)
-      ? sortDiffTreeObject(value)
-      : value;
-    return acc;
-  }, {});
 
 test('gendiff json format', () => {
   const file1 = getFixturePath('file1.json');

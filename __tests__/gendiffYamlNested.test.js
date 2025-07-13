@@ -2,13 +2,13 @@ import { test, expect } from '@jest/globals';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
-import genDiff from '../gendiff.js';
+import genDiff from '../gendiff';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
-const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
+const getFixturePath = (name) => path.join(dirname, '..', '__fixtures__', name);
+const readFile = (name) => fs.readFileSync(getFixturePath(name), 'utf-8');
 
 const sortObject = (obj) => {
   if (Array.isArray(obj)) return obj.map(sortObject);
