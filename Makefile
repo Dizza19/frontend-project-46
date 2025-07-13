@@ -5,7 +5,7 @@ test:
 	npm test
 
 lint:
-	npx eslint .
+	npx eslint --config eslint.config.js .
 
 lint-fix:
 	npx eslint . --fix --ignore-pattern coverage
