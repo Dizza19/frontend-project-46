@@ -1,16 +1,20 @@
-import globals from 'globals';
-import pluginJs from '@eslint/js';
+import js from "@eslint/js";
+import globals from "globals";
+import { defineConfig } from "eslint/config";
+import stylistic from "@stylistic/eslint-plugin";
+import pluginJest from "eslint-plugin-jest";
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  { languageOptions: { globals: { ...globals.node, ...globals.jest } } },
-  pluginJs.configs.recommended,
+export default defineConfig([
+  stylistic.configs.recommended,
   {
-    rules: {
-      'no-console': 'off',
-      'no-unused-vars': 'warn',
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single'],
+    files: ["**/*.{js,mjs,cjs}"],
+    plugins: { js },
+    extends: ["js/recommended"],
+  },
+  { files: ["**/*.{js,mjs,cjs}"], languageOptions: { globals: globals.node } },
+  {
+    languageOptions: {
+      globals: pluginJest.environments.globals.globals,
     },
   },
-];
+]);
