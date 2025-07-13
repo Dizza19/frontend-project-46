@@ -4,7 +4,7 @@ import stylistic from '@stylistic/eslint-plugin'
 
 export default [
   {
-    ignores: ['coverage/**', '**/coverage/**'],
+    ignores: ['coverage/**', '**/coverage/**', 'code/coverage/**'],
   },
   js.configs.recommended,
   stylistic.configs.recommended,
