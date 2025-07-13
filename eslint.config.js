@@ -1,12 +1,12 @@
 import js from '@eslint/js'
 import globals from 'globals'
-import { defineConfig } from 'eslint/config'
 import stylistic from '@stylistic/eslint-plugin'
 
-export default defineConfig([
+export default [
   {
-    ignores: ['**/coverage/**'],
+    ignores: ['coverage/**', '**/coverage/**'],
   },
+  js.configs.recommended,
   stylistic.configs.recommended,
   {
     languageOptions: {
@@ -14,11 +14,8 @@ export default defineConfig([
       sourceType: 'module',
       globals: {
         ...globals.node,
+        ...globals.browser,
       },
     },
-    plugins: {
-      js,
-    },
-    extends: ['js/recommended'],
   },
-])
+]
