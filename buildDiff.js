@@ -2,7 +2,9 @@ const isObject = (value) =>
   typeof value === 'object' && value !== null && !Array.isArray(value);
 
 const buildDiff = (obj1, obj2) => {
-  const keys = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])].sort();
+  const keys = [
+    ...new Set([...Object.keys(obj1), ...Object.keys(obj2)]),
+  ].sort();
 
   const diff = keys.map((key) => {
     const val1 = obj1[key];
