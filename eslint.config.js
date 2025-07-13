@@ -7,7 +7,7 @@ export default defineConfig([
   stylistic.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs}'],
-    ignores: ['coverage/**'],
+    ignores: ['**/coverage/**'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
