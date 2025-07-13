@@ -2,7 +2,7 @@ import { test, expect } from '@jest/globals';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import fs from 'fs';
-import genDiff from '../gendiff';
+import genDiff from '../gendiff.js';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);

@@ -11,7 +11,7 @@ module.exports = {
   },
   rules: {
     'import/extensions': ['error', 'ignorePackages', {
-      js: 'never',
+      js: 'always',
     }],
   },
   settings: {
