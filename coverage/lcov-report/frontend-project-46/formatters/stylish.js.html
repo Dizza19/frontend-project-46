@@ -153,51 +153,51 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const makeIndent = <span class="fstat-no" title="function not covered" >(d</span>epth, replacer = <span class="branch-0 cbranch-no" title="branch not covered" >' ',</span> spacesCount = <span class="branch-0 cbranch-no" title="branch not covered" >4)</span> =&gt; <span class="cstat-no" title="statement not covered" >replacer.repeat(depth * spacesCount - 2);</span>
-const makeBracketIndent = <span class="fstat-no" title="function not covered" >(d</span>epth, replacer = <span class="branch-0 cbranch-no" title="branch not covered" >' ',</span> spacesCount = <span class="branch-0 cbranch-no" title="branch not covered" >4)</span> =&gt; <span class="cstat-no" title="statement not covered" >replacer.repeat((depth - 1) * spacesCount);</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const makeIndent = <span class="fstat-no" title="function not covered" >(d</span>epth, replacer = <span class="branch-0 cbranch-no" title="branch not covered" >' ',</span> spacesCount = <span class="branch-0 cbranch-no" title="branch not covered" >4)</span> =&gt; <span class="cstat-no" title="statement not covered" >replacer.repeat(depth * spacesCount - 2)</span>
+const makeBracketIndent = <span class="fstat-no" title="function not covered" >(d</span>epth, replacer = <span class="branch-0 cbranch-no" title="branch not covered" >' ',</span> spacesCount = <span class="branch-0 cbranch-no" title="branch not covered" >4)</span> =&gt; <span class="cstat-no" title="statement not covered" >replacer.repeat((depth - 1) * spacesCount)</span>
 &nbsp;
 const stringify = <span class="fstat-no" title="function not covered" >(v</span>alue, depth) =&gt; {
 <span class="cstat-no" title="statement not covered" >  if (typeof value !== 'object' || value === null) {</span>
-<span class="cstat-no" title="statement not covered" >    return String(value);</span>
+<span class="cstat-no" title="statement not covered" >    return String(value)</span>
   }
 &nbsp;
-  const entries = <span class="cstat-no" title="statement not covered" >Object.entries(value);</span>
+  const entries = <span class="cstat-no" title="statement not covered" >Object.entries(value)</span>
   const lines = <span class="cstat-no" title="statement not covered" >entries.map(</span>
 <span class="fstat-no" title="function not covered" >    ([</span>key, val]) =&gt; <span class="cstat-no" title="statement not covered" >`${makeIndent(depth)}  ${key}: ${stringify(val, depth + 1)}`,</span>
-  );
+  )
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return ['{', ...lines, `${makeBracketIndent(depth)}}`].join('\n');</span>
-};
+<span class="cstat-no" title="statement not covered" >  return ['{', ...lines, `${makeBracketIndent(depth)}}`].join('\n')</span>
+}
 &nbsp;
 const stylish = <span class="fstat-no" title="function not covered" >(t</span>ree, depth = <span class="branch-0 cbranch-no" title="branch not covered" >1)</span> =&gt; {
   const lines = <span class="cstat-no" title="statement not covered" >tree.map(<span class="fstat-no" title="function not covered" >(n</span>ode) =&gt; {</span>
     const {
       key, type, value, oldValue, newValue, children,
-    } = <span class="cstat-no" title="statement not covered" >node;</span>
+    } = <span class="cstat-no" title="statement not covered" >node</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    switch (type) {</span>
       case 'added':
-<span class="cstat-no" title="statement not covered" >        return `${makeIndent(depth)}+ ${key}: ${stringify(value, depth + 1)}`;</span>
+<span class="cstat-no" title="statement not covered" >        return `${makeIndent(depth)}+ ${key}: ${stringify(value, depth + 1)}`</span>
       case 'removed':
-<span class="cstat-no" title="statement not covered" >        return `${makeIndent(depth)}- ${key}: ${stringify(value, depth + 1)}`;</span>
+<span class="cstat-no" title="statement not covered" >        return `${makeIndent(depth)}- ${key}: ${stringify(value, depth + 1)}`</span>
       case 'unchanged':
-<span class="cstat-no" title="statement not covered" >        return `${makeIndent(depth)}  ${key}: ${stringify(value, depth + 1)}`;</span>
+<span class="cstat-no" title="statement not covered" >        return `${makeIndent(depth)}  ${key}: ${stringify(value, depth + 1)}`</span>
       case 'modified':
 <span class="cstat-no" title="statement not covered" >        return [</span>
           `${makeIndent(depth)}- ${key}: ${stringify(oldValue, depth + 1)}`,
           `${makeIndent(depth)}+ ${key}: ${stringify(newValue, depth + 1)}`,
-        ].join('\n');
+        ].join('\n')
       case 'nested':
-<span class="cstat-no" title="statement not covered" >        return `${makeIndent(depth)}  ${key}: ${stylish(children, depth + 1)}`;</span>
+<span class="cstat-no" title="statement not covered" >        return `${makeIndent(depth)}  ${key}: ${stylish(children, depth + 1)}`</span>
       default:
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Неизвестный тип: ${type}`);</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Неизвестный тип: ${type}`)</span>
     }
-  });
+  })
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return ['{', ...lines, `${makeBracketIndent(depth)}}`].join('\n');</span>
-};
+<span class="cstat-no" title="statement not covered" >  return ['{', ...lines, `${makeBracketIndent(depth)}}`].join('\n')</span>
+}
 &nbsp;
-export default stylish;
+export default stylish
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -205,7 +205,7 @@ export default stylish;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-13T16:07:22.198Z
+                at 2025-07-13T19:40:29.558Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

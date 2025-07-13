@@ -5,7 +5,8 @@ test:
 	npm test
 
 lint:
+	rm -rf code/coverage coverage
 	npx eslint --config eslint.config.js .
 
 lint-fix:
-	npx eslint . --fix --ignore-pattern coverage
+	npx eslint --config eslint.config.js . --fix
