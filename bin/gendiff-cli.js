@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import { Command } from 'commander';
-import genDiff from '../gendiff.js';
+import { Command } from 'commander'
+import genDiff from '../gendiff.js'
 
-const program = new Command();
+const program = new Command()
 
 program
   .version('0.0.1')
@@ -12,8 +12,8 @@ program
   .argument('<filepath2>')
   .option('-f, --format <type>', 'output format', 'stylish')
   .action((filepath1, filepath2, options) => {
-    const diff = genDiff(filepath1, filepath2, options.format);
-    console.log(diff);
-  });
+    const diff = genDiff(filepath1, filepath2, options.format)
+    console.log(diff)
+  })
 
-program.parse();
+program.parse()
