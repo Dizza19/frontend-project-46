@@ -22,7 +22,6 @@ const formatPlain = (tree, path = '') => tree
         return []
     }
   })
-  .filter(Boolean)
   .join('\n')
 
 export default formatPlain

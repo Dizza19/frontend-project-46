@@ -1,116 +1,28 @@
 [
   {
-    "key": "common",
-    "type": "nested",
-    "children": [
-      {
-        "key": "follow",
-        "type": "added",
-        "value": false
-      },
-      {
-        "key": "setting1",
-        "type": "unchanged",
-        "value": "Value 1"
-      },
-      {
-        "key": "setting2",
-        "type": "removed",
-        "value": 200
-      },
-      {
-        "key": "setting3",
-        "type": "modified",
-        "oldValue": true,
-        "newValue": null
-      },
-      {
-        "key": "setting4",
-        "type": "added",
-        "value": "blah blah"
-      },
-      {
-        "key": "setting5",
-        "type": "added",
-        "value": {
-          "key5": "value5"
-        }
-      },
-      {
-        "key": "setting6",
-        "type": "nested",
-        "children": [
-          {
-            "key": "doge",
-            "type": "nested",
-            "children": [
-              {
-                "key": "wow",
-                "type": "modified",
-                "oldValue": "",
-                "newValue": "so much"
-              }
-            ]
-          },
-          {
-            "key": "key",
-            "type": "unchanged",
-            "value": "value"
-          },
-          {
-            "key": "ops",
-            "type": "added",
-            "value": "vops"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "key": "group1",
-    "type": "nested",
-    "children": [
-      {
-        "key": "baz",
-        "type": "modified",
-        "oldValue": "bas",
-        "newValue": "bars"
-      },
-      {
-        "key": "foo",
-        "type": "unchanged",
-        "value": "bar"
-      },
-      {
-        "key": "nest",
-        "type": "modified",
-        "oldValue": {
-          "key": "value"
-        },
-        "newValue": "str"
-      }
-    ]
-  },
-  {
-    "key": "group2",
+    "key": "follow",
     "type": "removed",
-    "value": {
-      "abc": 12345,
-      "deep": {
-        "id": 45
-      }
-    }
+    "value": false
   },
   {
-    "key": "group3",
+    "key": "host",
+    "type": "unchanged",
+    "value": "hexlet.io"
+  },
+  {
+    "key": "proxy",
+    "type": "removed",
+    "value": "123.234.53.22"
+  },
+  {
+    "key": "timeout",
+    "type": "modified",
+    "oldValue": 50,
+    "newValue": 20
+  },
+  {
+    "key": "verbose",
     "type": "added",
-    "value": {
-      "deep": {
-        "id": {
-          "number": 45
-        }
-      },
-      "fee": 100500
-    }
+    "value": true
   }
 ]

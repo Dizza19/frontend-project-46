@@ -42,7 +42,7 @@ const buildDiff = (obj1, obj2) => {
     }
   })
 
-  return diff.sort((a, b) => a.key.localeCompare(b.key))
+  return diff
 }
 
 export default buildDiff
