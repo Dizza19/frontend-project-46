@@ -4,7 +4,7 @@
   "description": "[![Actions Status](https://github.com/Dizza19/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Dizza19/frontend-project-46/actions)",
   "main": "src/gendiff.js",
   "bin": {
-    "gendiff": "./src/gendiff-cli.js"
+    "gendiff": "./bin/gendiff-cli.js"
   },
   "type": "module",
   "scripts": {
