@@ -19,3 +19,4 @@ test.each([
   const filepath2 = getFixturePath(file2);
   expect(genDiff(filepath1, filepath2, format)).toBe(expected);
 });
+
