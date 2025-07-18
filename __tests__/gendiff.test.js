@@ -11,7 +11,7 @@ const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
 test.each([
   ['file1.json', 'file2.json', 'stylish', 'expectedStylish.txt'],
-  ['file1.yaml', 'file2.yaml', 'plain', 'expectedPlain.txt'],
+  ['file1.yml', 'file2.yml', 'plain', 'expectedPlain.txt'],
   ['file1.json', 'file2.json', 'json', 'expectedJson.txt'],
 ])('genDiff %s %s with format %s', (file1, file2, format, expectedFile) => {
   const expected = readFile(expectedFile).trim();
