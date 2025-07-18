@@ -1,9 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import yaml from 'js-yaml';
-import _ from 'lodash';
-import buildDiff from './buildDiff.js';
-import getFormatter from './formatters/index.js';
+import fs from 'fs'
+import path from 'path'
+import yaml from 'js-yaml'
+import buildDiff from './buildDiff.js'
+import getFormatter from './formatters/index.js'
 
 const parse = (data, format) => {
   switch (format) {
